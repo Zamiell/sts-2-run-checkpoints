@@ -1,0 +1,12 @@
+{
+  "id": "RunCheckpoints",
+  "name": "Run Checkpoints",
+  "author": "James",
+  "description": "Archives run saves and adds a singleplayer checkpoint picker, quick rewind, and optional Ctrl+Z confirmation.",
+  "version": "1.1.0",
+  "min_game_version": "0.111.0",
+  "has_pck": false,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": true
+}

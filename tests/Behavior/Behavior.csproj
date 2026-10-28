@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../SaveWritePatches.cs" Link="SaveWritePatches.cs" />
+    <Compile Include="../../CheckpointArchive.cs" Link="CheckpointArchive.cs" />
+    <Compile Include="../../CheckpointStore.cs" Link="CheckpointStore.cs" />
+    <Reference Include="0Harmony" HintPath="$(GameDataDir)/0Harmony.dll" />
+  </ItemGroup>
+</Project>

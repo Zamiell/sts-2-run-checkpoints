@@ -1,0 +1,18 @@
+<Project>
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('OSX'))">
+    <GameDir Condition="'$(GameDir)' == ''">$(HOME)/Library/Application Support/Steam/steamapps/common/Slay the Spire 2</GameDir>
+    <GameArch Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::OSArchitecture)' == 'Arm64'">arm64</GameArch>
+    <GameArch Condition="'$(GameArch)' == ''">x86_64</GameArch>
+    <GameDataDir Condition="'$(GameDataDir)' == ''">$(GameDir)/SlayTheSpire2.app/Contents/Resources/data_sts2_macos_$(GameArch)</GameDataDir>
+    <GameModsDir Condition="'$(GameModsDir)' == ''">$(GameDir)/SlayTheSpire2.app/Contents/MacOS/mods</GameModsDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="$([MSBuild]::IsOSPlatform('Windows'))">
+    <GameDir Condition="'$(GameDir)' == ''">C:/Program Files (x86)/Steam/steamapps/common/Slay the Spire 2</GameDir>
+  </PropertyGroup>
+  <PropertyGroup>
+    <!-- Linux defaults to the Windows Steam installation through WSL. -->
+    <GameDir Condition="'$(GameDir)' == ''">/mnt/c/Program Files (x86)/Steam/steamapps/common/Slay the Spire 2</GameDir>
+    <GameDataDir Condition="'$(GameDataDir)' == ''">$(GameDir)/data_sts2_windows_x86_64</GameDataDir>
+    <GameModsDir Condition="'$(GameModsDir)' == ''">$(GameDir)/mods</GameModsDir>
+  </PropertyGroup>
+</Project>
